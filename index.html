@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Fashion Store</title>
+<style>
+    body { font-family: Arial, sans-serif; margin: 0; padding: 0; }
+    header { background: #333; color: white; padding: 10px 20px; text-align: center; }
+    .product { border: 1px solid #ddd; margin: 10px; padding: 10px; float: left; width: calc(33.333% - 22px); box-sizing: border-box; }
+    .product img { width: 100%; height: auto; }
+    #cart { position: fixed; top: 10px; right: 10px; background: white; border: 1px solid black; padding: 10px; }
+    #login { position: fixed; top: 10px; left: 10px; background: white; border: 1px solid black; padding: 10px; }
+</style>
+</head>
+<body>
+<header>
+    <h1>Fashion Design Store</h1>
+</header>
+<div id="login">
+    <button onclick="alert('Login/Register functionality to be implemented')">Login/Register</button>
+</div>
+<div id="cart">
+    <button onclick="alert('Shopping Cart functionality to be implemented')">View Cart</button>
+</div>
+<div style="padding: 20px;">
+    <label for="search">Search:</label>
+    <input type="text" id="search" placeholder="Search..." oninput="searchProduct(this.value)" style="width: 100%; padding: 10px;">
+</div>
+<div class="product-gallery" style="overflow: hidden; padding: 0 20px;">
+    <div class="product" data-name="Product 1"><img src="https://via.placeholder.com/150" alt="Product 1"><p>Product 1</p></div>
+    <div class="product" data-name="Product 2"><img src="https://via.placeholder.com/150" alt="Product 2"><p>Product 2</p></div>
+    <div class="product" data-name="Product 3"><img src="https://via.placeholder.com/150" alt="Product 3"><p>Product 3</p></div>
+</div>
+<script>
+    function searchProduct(query) {
+        document.querySelectorAll('.product').forEach(product => {
+            product.style.display = product.getAttribute('data-name').toLowerCase().includes(query.toLowerCase()) ? 'block' : 'none';
+        });
+    }
+</script>
+</body>
+</html>
